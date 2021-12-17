@@ -1,11 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.example_mobi_call"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- Required to fetch data from the internet. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
        tools:replace="android:label"
        android:label="example_mobi_call"
         android:icon="@mipmap/ic_launcher">
-        <activity
+
+       <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
