@@ -39,7 +39,7 @@ dependencies:
   mobi_call:
     git:
       url: https://github.com/quang10296/mobifone_meet_helper.git
-      ref: develop
+      ref: tong_dai
 
 dev_dependencies:
   flutter_test:

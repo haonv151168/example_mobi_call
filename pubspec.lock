@@ -81,6 +81,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   http:
     dependency: "direct main"
     description:
@@ -95,6 +100,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+  jitsi_meet:
+    dependency: transitive
+    description:
+      name: jitsi_meet
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
+  jitsi_meet_platform_interface:
+    dependency: transitive
+    description:
+      name: jitsi_meet_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
+  jitsi_meet_web_plugin:
+    dependency: transitive
+    description:
+      name: jitsi_meet_web_plugin
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   js:
     dependency: transitive
     description:
@@ -134,29 +160,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: develop
-      resolved-ref: a370510bfd123f4be4e1d8cf84798011d839f673
+      ref: tong_dai
+      resolved-ref: "9664cacc7388a7b611439c26646338da9e504215"
       url: "https://github.com/quang10296/mobifone_meet_helper.git"
     source: git
     version: "1.0.0+1"
-  mobifone_meet:
-    dependency: transitive
-    description:
-      path: mobifone_meet
-      ref: develop
-      resolved-ref: "83c106a72b7b6764b3b81e834a7699df192cab16"
-      url: "https://github.com/haonv151168/mobifone_meet.git"
-    source: git
-    version: "4.0.0"
-  mobifone_meet_platform_interface:
-    dependency: transitive
-    description:
-      path: mobifone_meet_platform_interface
-      ref: develop
-      resolved-ref: "83c106a72b7b6764b3b81e834a7699df192cab16"
-      url: "https://github.com/haonv151168/mobifone_meet.git"
-    source: git
-    version: "2.0.0"
   path:
     dependency: transitive
     description:
@@ -248,4 +256,4 @@ packages:
     version: "2.1.0"
 sdks:
   dart: ">=2.14.0 <3.0.0"
-  flutter: ">=1.17.0"
+  flutter: ">=1.20.0"

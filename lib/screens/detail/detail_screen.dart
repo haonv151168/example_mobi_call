@@ -1,9 +1,11 @@
 import 'package:example_mobi_call/models/TokenModel.dart';
 import 'package:flutter/material.dart';
 import 'package:mobi_call/config/config.dart';
+import 'package:mobi_call/config/globals.dart';
 import 'package:mobi_call/helper/socket_helper.dart';
 import 'package:mobi_call/mobifone_helper/call_listener.dart';
 import 'package:mobi_call/mobifone_helper/mobifone_helper.dart';
+import 'package:mobi_call/models/SignalResponModel.dart';
 
 class DetailScreen extends StatefulWidget {
 
@@ -46,22 +48,26 @@ class _DetailScreenState extends State<DetailScreen >implements MobifoneHelperLi
     print("onConnectionError");
   }
 
+
   @override
-  onError(String message) {
-    print("onError");
+  onError(String? message) {
+    // TODO: implement onError
+    if (message != null) {
+      print("message " + message);
+    }
+
   }
 
   @override
-  onSignalingStateChange(String state) {
-    print("$state");
-    if (state == Config().EVENT_ACCEPT) {
-      MobifoneClient().joinMeeting();
-    }
+  onSignalingStateChange(String state, SignalResponModel model) {
+    // TODO: implement onSignalingStateChange
+    print("state: " + state);
+    print("SignalResponModel: " + model.toString());
   }
 
   void call() {
     print("token la ${widget.model.token}");
-    MobifoneClient().makeCall("2cbeea73-23f7-43ce-8338-40c060f2283c", "video", "hong");
+    MobifoneClient().makeCall(null, '', 'hao', 'c2c');
   }
 
   @override
@@ -95,4 +101,5 @@ class _DetailScreenState extends State<DetailScreen >implements MobifoneHelperLi
       ),
     );
   }
+
 }
