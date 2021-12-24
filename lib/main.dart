@@ -1,7 +1,5 @@
-import 'package:example_mobi_call/screens/login/login_screen.dart';
+import 'screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
-
-
 
 void main() {
   runApp(const MyApp());

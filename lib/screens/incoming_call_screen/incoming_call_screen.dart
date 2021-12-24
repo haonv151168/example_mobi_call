@@ -1,4 +1,4 @@
-import 'package:example_mobi_call/constants/constants.dart';
+import '../../constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:mobi_call/helper/socket_helper.dart';
 

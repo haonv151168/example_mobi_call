@@ -1,12 +1,12 @@
 import 'dart:convert';
-import 'package:example_mobi_call/screens/detail/detail_screen.dart';
+import '../detail/detail_screen.dart';
 import 'package:http/http.dart' as http;
-import 'package:example_mobi_call/models/TokenModel.dart';
+import '../../models/TokenModel.dart';
 import 'package:flutter/material.dart';
 
 Future<TokenModel> getToken(String name) async {
-  final response = await http
-      .get(Uri.parse('http://10.4.200.29:9899/token/$name'));
+  final response =
+      await http.get(Uri.parse('http://10.4.200.29:9899/token/$name'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -20,7 +20,6 @@ Future<TokenModel> getToken(String name) async {
 }
 
 class LoginPage extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() => new _State();
 }
@@ -58,8 +57,6 @@ class _State extends State<LoginPage> {
                     ),
                   ),
                 ),
-
-
                 Container(
                     height: 50,
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -68,7 +65,7 @@ class _State extends State<LoginPage> {
                       color: Colors.blue,
                       child: Text('Generate Token'),
                       onPressed: () {
-                        getToken(nameController.text).then((model){
+                        getToken(nameController.text).then((model) {
                           print(model.token);
                           Navigator.push(
                             context,
@@ -79,7 +76,6 @@ class _State extends State<LoginPage> {
                         });
                       },
                     )),
-
               ],
             )));
   }

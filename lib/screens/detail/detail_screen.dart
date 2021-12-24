@@ -1,6 +1,6 @@
-import 'package:example_mobi_call/constants/constants.dart';
-import 'package:example_mobi_call/models/TokenModel.dart';
-import 'package:example_mobi_call/screens/incoming_call_screen/incoming_call_screen.dart';
+import '../../constants/constants.dart';
+import '../../models/TokenModel.dart';
+import '../incoming_call_screen/incoming_call_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:mobi_call/config/config.dart';
 import 'package:mobi_call/config/globals.dart';
@@ -64,10 +64,10 @@ class _DetailScreenState extends State<DetailScreen>
 
     switch (state) {
       case Config.EVENT_CALLING:
-        pushToIncomingCallScreen(true, toUser);
+        pushToIncomingCallScreen(true, MeetingInfo.toHotline);
         break;
       case Config.EVENT_RINGING:
-        pushToIncomingCallScreen(false, fromUser);
+        pushToIncomingCallScreen(false, MeetingInfo.fromUser);
         break;
       case Config.EVENT_MISS:
         Navigator.pop(context);
