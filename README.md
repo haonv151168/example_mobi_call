@@ -1,16 +1,60 @@
-# example_mobi_call
+#  Flutter MobiCall Example Project.
 
-A new Flutter project.
+## Usage
 
-## Getting Started
+### Clone project
+`git clone https://github.com/haonv151168/example_mobi_call.git`
 
-This project is a starting point for a Flutter application.
+### Change directory 
+`cd example_mobi_call`
 
-A few resources to get you started if this is your first Flutter project:
+### Open project in IDE( vscode )
+`code .`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### In `TERMINAL` VSCODE
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Config IOS 
+`cd ios`
+`open Podfile` and change :
+
+```diff 
++ # platform :ios, '9.0'
+``` 
+
+TO
+
+```diff 
++ platform :ios, '11.0'
+```
+
+```diff
++post_install do |installer|
++  installer.pods_project.targets.each do |target|
++    flutter_additional_ios_build_settings(target)
++  end
++end
+```  
+
+TO
+
+ ```diff
++post_install do |installer|
++  installer.pods_project.targets.each do |target|
++    target.build_configurations.each do |config|
++      config.build_settings['ENABLE_BITCODE'] = 'NO'
++    end
++    flutter_additional_ios_build_settings(target)
++  end
++end
+```
+
+Add to `Info.plist`
+```diff 
++<key>NSCameraUsageDescription</key>
++<string>$(PRODUCT_NAME) MobiCall needs access to your camera for meetings.</string>
++<key>NSMicrophoneUsageDescription</key>
++<string>$(PRODUCT_NAME) MobiCall needs access to your microphone for meetings.</string>
+``` 
+
+
+### RUN.
