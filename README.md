@@ -249,7 +249,7 @@ void initState() {
 
 <a name="join-a-meeting-programmatically"></a>
 
-## Code send call to hotline
+## Code make call to hotline
 
 ```dart
 MobifoneClient().makeCall("19001009", "", null, "c2h");
