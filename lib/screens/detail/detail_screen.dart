@@ -119,7 +119,7 @@ class _DetailScreenState extends State<DetailScreen>
 
   void call() {
     print("token la ${widget.model.token}");
-    MobifoneClient().makeCall("19001009", "", null, "c2h");
+    MobifoneClient().makeCall(hotline, "", null, "c2h");
     // MobifoneClient().makeCall(null, "", "daxua3", "c2c");
   }
 

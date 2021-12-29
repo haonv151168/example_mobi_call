@@ -1,12 +1,14 @@
 import 'dart:convert';
+import 'package:example_mobi_call/constants/constants.dart';
+
 import '../detail/detail_screen.dart';
 import 'package:http/http.dart' as http;
 import '../../models/TokenModel.dart';
 import 'package:flutter/material.dart';
 
 Future<TokenModel> getToken(String name) async {
-  final response =
-      await http.get(Uri.parse('https://ott.mobifone.ai/callcenter-backend/token/$name'));
+  final response = await http
+      .get(Uri.parse('https://ott.mobifone.ai/callcenter-backend/token/$name'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -26,6 +28,7 @@ class LoginPage extends StatefulWidget {
 
 class _State extends State<LoginPage> {
   TextEditingController nameController = TextEditingController();
+  TextEditingController hotlineController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +61,16 @@ class _State extends State<LoginPage> {
                   ),
                 ),
                 Container(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                    controller: hotlineController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Hotline',
+                    ),
+                  ),
+                ),
+                Container(
                     height: 50,
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: RaisedButton(
@@ -67,6 +80,7 @@ class _State extends State<LoginPage> {
                       onPressed: () {
                         getToken(nameController.text).then((model) {
                           print(model.token);
+                          hotline = hotlineController.text;
                           Navigator.push(
                             context,
                             MaterialPageRoute(
