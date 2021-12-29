@@ -25,7 +25,7 @@ class _DetailScreenState extends State<DetailScreen>
   @override
   void initState() {
     super.initState();
-    Config.socketUrl = "http://103.199.79.64:3000";
+    Config.socketUrl = "https://ott.mobifone.ai/";
 
     Config.jwt_token = widget.model.token;
     print("thanh " + Config.jwt_token);

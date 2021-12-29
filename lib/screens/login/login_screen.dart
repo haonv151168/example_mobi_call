@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 Future<TokenModel> getToken(String name) async {
   final response =
-      await http.get(Uri.parse('http://10.4.200.29:9899/token/$name'));
+      await http.get(Uri.parse('https://ott.mobifone.ai/callcenter-backend/token/$name'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
