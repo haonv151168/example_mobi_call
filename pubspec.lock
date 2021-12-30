@@ -161,7 +161,7 @@ packages:
     description:
       path: "."
       ref: tong_dai
-      resolved-ref: "96ca72b8c23e2cd5ea8c4c7a9109047749fc2cc5"
+      resolved-ref: b8ccae4fcd823cb63775d054687fca5f5a0e47b7
       url: "https://github.com/quang10296/mobifone_meet_helper.git"
     source: git
     version: "1.0.0+1"

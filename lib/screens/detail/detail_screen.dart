@@ -32,7 +32,10 @@ class _DetailScreenState extends State<DetailScreen>
     print("thanh2: " + widget.model.token);
     MobifoneClient().mobifoneHelperListener = this;
     MobifoneClient().callListener = this;
-    MobifoneClient().connectServer(context);
+    if (!MobifoneClient().isConnected()) {
+      MobifoneClient().connectServer(context);
+    }
+
   }
 
   void _incrementCounter() {
