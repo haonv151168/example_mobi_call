@@ -6,7 +6,7 @@
 
    <application
        tools:replace="android:label"
-       android:label="example_mobi_call"
+       android:label="msale"
         android:icon="@mipmap/ic_launcher">
 
        <activity
